@@ -1,0 +1,12 @@
+<h2>Fridges</h2>
+
+<ul>
+  <li><%= link_to "Create New Fridge", new_fridge_path %></li>
+
+
+<% @fridges.each do |fridge| %>
+
+  <li><%= link_to fridge.brand, fridge_path(fridge)  %></li>
+
+<% end %>
+</ul>

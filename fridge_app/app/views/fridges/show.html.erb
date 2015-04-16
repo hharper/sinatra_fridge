@@ -1,0 +1,22 @@
+
+<h2><%= @fridge.brand %></h2>
+<h2><%= @fridge.location %></h2>
+<h2><%= @fridge.size %></h2>
+
+<br>
+
+<%= link_to "Edit Fridge", edit_fridge_path(@fridge) %>
+<%= link_to "Delete Fridge", fridge_path(@fridge), method: :delete, confirm: true%>
+
+
+<h3>Foods</h3>
+
+<%= link_to "Create New Food", new_fridge_food_path(@fridge) %>
+
+<% @fridge.foods.each do |food| %>
+<div class="food">
+  <%= food.name %> </div>
+  <%= link_to "Edit Food", edit_fridge_food_path(@fridge, food) %>
+  <%= link_to "Delete Food", fridge_food_path(@fridge, food), method: :delete, confirm: true%>
+
+<% end %>

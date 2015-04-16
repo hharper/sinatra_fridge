@@ -1,0 +1,21 @@
+<h1>Create A New Food</h1>
+
+<% if @food.errors.any? %>
+<ul>
+  <% @food.errors.full_messages.each do |error| %>
+  <li> <%= error %></li>
+  <%end%>
+</ul>
+  <% end %>
+
+<h2><%= @fridge.brand %></h2>
+<%= @food.name %>
+
+
+<%= form_for [@fridge, @food] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+
+<% end %>
